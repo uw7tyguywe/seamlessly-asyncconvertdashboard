@@ -1,14 +1,16 @@
-function selectionSort(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    let minIndex = i;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[minIndex]) minIndex = j;
-    }
-    if (minIndex !== i) {
-      let temp = arr[i];
-      arr[i] = arr[minIndex];
-      arr[minIndex] = temp;
+function longestConsecutive(nums) {
+  const set = new Set(nums);
+  let longest = 0;
+  for (const num of set) {
+    if (!set.has(num - 1)) {
+      let currentNum = num;
+      let currentStreak = 1;
+      while (set.has(currentNum + 1)) {
+        currentNum++;
+        currentStreak++;
+      }
+      longest = Math.max(longest, currentStreak);
     }
   }
-  return arr;
+  return longest;
 }
