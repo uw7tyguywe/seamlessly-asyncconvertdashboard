@@ -1,3 +1,3 @@
-function countConsonants(str) {
-  return str.match(/[bcdfghjklmnpqrstvwxyz]/gi).length;
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
 }
