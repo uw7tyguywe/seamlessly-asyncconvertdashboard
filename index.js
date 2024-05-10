@@ -1,3 +1,1 @@
-function removeDuplicates(arr) {
-  return [...new Set(arr)];
-}
+const isEven = (num) => num % 2 === 0;
